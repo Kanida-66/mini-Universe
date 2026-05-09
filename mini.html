@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบสุริยะจักรวาล</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <script>
+        let img;
+        let angle = 0
+        function setup(){
+            createCanvas(1500,1000);
+            background(0);
+            angleMode(DEGREES)
+
+        }
+        function preload() {
+            //ดาวเคราะห์
+            img1 = loadImage('image/mercury.png');
+            img2 = loadImage('image/venus.png');
+            img3 = loadImage('image/earth.png');
+            img4 = loadImage('image/mars.png');
+            img5 = loadImage('image/jupi.png');
+            img6 = loadImage('image/sat.png');
+            img7 = loadImage('image/uranus.png');
+            img8 = loadImage('image/neptu.png');
+            img9 = loadImage('image/sun.png');
+            //อุกาบาต
+            img10 = loadImage('image/uk1.png');
+            img11 = loadImage('image/uk2.png');
+            img12 = loadImage('image/uk3.png');
+            //ยานอวกาศ
+            img13 = loadImage('image/ak1.png');
+            img14 = loadImage('image/ak2.png');
+            img15 = loadImage('image/ak3.png');
+
+        }
+        function draw(){
+            //พื้นหลัง
+            push();
+            //รูปวงกลมพื้นหลัง
+            strokeWeight(1); //กำหนดขนาดเส้น
+            fill(0, 4, 8 );
+            stroke(131, 166, 185);
+            circle(200,500,3000);
+
+            //รูปวงกลมเนปจูน
+            fill(5, 28, 57 );
+            stroke(190, 218, 255);
+            circle(200,500,2400);
+            
+
+            //รูปวงกลมยูเรนัส
+            fill(6, 36, 73 );
+            stroke(190, 218, 255);
+            circle(200,500,2100);
+
+            //รูปวงกลมดาวเสาร์
+            fill(8, 43, 88 );
+            stroke(190, 218, 255);
+            circle(200,500,1800);
+
+            //รูปวงกลมดาวพฤหัส
+            fill(10, 52, 106 );
+            stroke(190, 218, 255);
+            circle(200,500,1450);
+
+            //รูปวงกลมดาวอังคาร
+            fill(13, 62, 124 );
+            stroke(190, 218, 255);
+            circle(200,500,1150);
+
+            //รูปวงกลมโลก
+            fill(15, 67, 134 );
+            stroke(190, 218, 255);
+            circle(200,500,950);
+
+            //รูปวงกลมดาวศุกร์
+            fill(16, 76, 153 );
+            stroke(190, 218, 255);
+            circle(200,500,750);
+
+            //รูปวงกลมพุธ
+            fill(22, 96, 190 );
+            stroke(190, 218, 255);
+            circle(200,500,550);
+            pop();
+
+
+
+            //ดาว
+            push();
+            noStroke();
+            drawStars(100); // สร้างดาว 100 ดวง
+            pop();
+
+            
+
+
+            //ดาวเคราะห์
+            push();
+            //sun
+            imageMode(CENTER);
+            image(img9,205,500,500,500,20);
+            pop();
+
+            translate(200,500);
+            // ดาวพุธ
+            push();
+            rotate(angle * +0.05);
+            imageMode(CENTER);
+            image(img1, 190,200,60,60,0 );
+            angle += 1;
+            pop();
+
+            push();
+            // ดาวศุกร์
+            rotate(angle * +0.045);
+            imageMode(CENTER);
+            image(img2, 233,300,85,85,0 );
+            angle += 1;
+            pop()
+            
+            push();
+            // โลก
+            rotate(angle * +0.04);
+            fill(124, 238, 195);
+            stroke(207, 255, 237);
+            circle(245,400,70);
+            imageMode(CENTER);
+            image(img3,246,400,95,90,10 );
+            angle += 1;
+            pop();
+
+            push();
+            // อังคาร
+            rotate(angle * +0.035);
+            fill(177,40,88);
+            stroke(177,40,88);
+            circle(285,500,75);
+            imageMode(CENTER);
+            image(img4, 287,500,85,85,10 );
+            angle += 1;
+            pop();
+
+            push();
+            // ดาวพฤหัส
+            rotate(angle * +0.03);
+            fill(189,1,1);
+            stroke(189,1,1);
+            circle(300,655,100);
+            imageMode(CENTER);
+            image(img5, 305,655,145,145,10 );
+            angle += 1;
+            pop();
+
+            push();
+            // ดาวเสาร์
+            rotate(angle * +0.025);
+            imageMode(CENTER);
+            image(img6, 450,790,200,160,10 );
+            angle += 1;
+            pop();
+            
+            push();
+            // ยูเรนัส
+            rotate(angle * +0.02);
+            imageMode(CENTER);
+            image(img7, 565,900,220,220,10 );
+            angle += 1;
+            pop();
+            
+            push();
+            // เนปจูน
+            rotate(angle * +0.015);
+            imageMode(CENTER);
+            image(img8, 660,1000,100,100,0 );
+            angle += 1;
+            pop();
+
+
+
+            //อุกาบาต
+            push();
+            translate(200,100);
+            rotate(angle * +0.015);
+            imageMode(CENTER);
+            image(img10, 950,50,30,30,0 );
+            angle += 1;
+            pop();
+
+            push();
+            translate(400,100);
+            rotate(angle * +0.010);
+            imageMode(CENTER);
+            image(img11, 650,50,30,30,0 );
+            pop();
+
+
+
+            //ดาวตก
+            push();
+            rotate(angle * +0.021);
+            imageMode(CENTER);
+            image(img12, 750,50,100,100,0 );
+            pop();
+
+            push();
+            rotate(angle * +0.024);
+            imageMode(CENTER);
+            image(img12, 950,50,100,100,0 );
+            pop();
+
+
+
+            //ยานอวกาศ
+            translate(300,100);
+            push();
+            rotate(angle * -0.012);
+            imageMode(CENTER);
+            image(img13, 900,50,30,30,0 );
+            pop();
+
+            push();
+            rotate(angle * +0.014);
+            imageMode(CENTER);
+            image(img15, 600,50,30,30,0 );
+            pop();
+
+            translate(600,600);
+            push();
+            rotate(angle * -0.016);
+            imageMode(CENTER);
+            image(img14, 750,50,30,30,0 );
+            pop();
+
+            translate(600,300);
+            push();
+            rotate(angle * -0.011);
+            imageMode(CENTER);
+            image(img15, 900,50,30,30,0 );
+            pop();
+
+            
+            
+            
+            
+            
+        }
+        //ฟังก์ชันดาว
+        function drawStars(numStars) {
+            for (let i = 0; i < numStars; i++) {
+                let x = random(width); // ตำแหน่ง x สุ่ม
+                let y = random(height); // ตำแหน่ง y สุ่ม
+                let size = random(3, 5, 10, 15, 20); // ขนาดสุ่ม
+
+
+                fill(255, 244, 108 ); //สีของดาว
+                ellipse(x, y, size, size); // สร้างดาว
+            }
+        }
+        
+
+    </script>
+    
+</body>
+</html>
